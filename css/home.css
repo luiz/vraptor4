@@ -9,12 +9,32 @@ footer h1 {
   text-shadow: 1px 1px white;
 }
 
+main.container h1, main.container h2 {
+  text-decoration: none;
+  color: black;
+}
+
+main.container h1:hover:after, 
+main.container h2:hover:after {
+  content: url(../img/link-icon.png) no-repeat top left;
+  margin-left: 10px;
+}
+
+.who-uses {
+  width: 95%;
+  margin: auto;
+}
+
 .who-uses li {
+  display: inline-block;
+  margin: 1em 2em;
+  vertical-align: middle;
+}
+
+.who-uses a {
   background: url(../img/whoUses.png) no-repeat top left;
   display: inline-block;
-  vertical-align: middle;
   text-indent: -99999px;
-  margin: 1em 2em;
 }
 
 .who-uses .agenciaclick {
@@ -45,4 +65,10 @@ footer h1 {
   background-position: 0 -413px; 
   width: 139px; 
   height: 56px;
+}
+
+.who-uses .mamute {
+  background: url(../img/mamute.png) no-repeat;
+  width: 235px; 
+  height: 70px;
 }

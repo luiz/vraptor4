@@ -16,7 +16,7 @@ a {
 
 h1,h2,h3 {
   line-height: 1.2;
-  margin: .5em 0;
+  margin: 1.5em 0;
 }
 
 h1 {
@@ -85,12 +85,12 @@ header {
   padding: 1em .5em;
 }
 
-div.note {
+.note {
   background-color: rgb(194, 194, 194);
   text-indent: 10px;
 }
 
-div.note p {
+.note p {
   margin: auto;
   padding: 1em;
 }
@@ -98,6 +98,13 @@ div.note p {
 .logo {
   display: block;
   margin: 0;
+}
+
+.community,
+.site-languages {
+  display: inline-block;
+  vertical-align: middle;
+  margin: .5em 1em;
 }
 
 .community li {
@@ -114,35 +121,71 @@ div.note p {
 }
 
 .community a:before {
+  background: url(../img/community.png) no-repeat top left;
   display: inline-block;
   content: '';
-  -webkit-background-size: contain;
-  background-size: contain;
+  -webkit-background-size: 32px;
+  background-size: 32px;
   width: 32px;
   height: 32px;
 }
 
 .community a[href*="groups.google.com"]:before {
-  background-image: url(../img/logo-gplus.png);
+  background-position: 0 -45px;
 }
 
 .community a[href*="github.com"]:before {
-  background-image: url(../img/logo-github.png);
+  background-position: 0 0;
 }
 
-.community a[href*="guj.com.br"]:before {
-  background-image: url(../img/logo-guj.png);
+.community a[href*="guj.com.br"]:before,
+.community a[href*="questions.vraptor"]:before {
+  background-position: 0 -89px;
+}
+
+.site-search-link {
+  display: inline-block;
+  vertical-align: middle;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  margin: 0 2em;
+}
+
+.site-search-link:before {
+  content: '';
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background-image: url(../img/search.png);
+  -webkit-background-size: 50% 50%;
+  background-size: 50% 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 2px solid #3E82C3;
+  border-radius: 50%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.site-search-form {
+  display: none;
+}
+
+.home-call-links {
+  display: block;
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .download-btn {
   display: block;
-  text-align: center;
   background-color: #224;
   color: #eee;
   font-size: 2em;
   border-radius: 5px;
-  max-width: 400px;
-  margin: 0 auto;
 }
 
 .download-btn:before {
@@ -163,14 +206,20 @@ div.note p {
   background-color: #449;
 }
 
+.old-vraptor-msg {
+  display: block;
+  margin: 1em auto;
+  font-style: italic;
+  font-size: .9em;
+}
+
 .home-advantages li {
   list-style: none;
 }
 
 .home-advantages li:before {
   content: '';
-  background-image: url(../img/advantages.png);
-  background-repeat: no-repeat;
+  background: url(../img/advantages.png) no-repeat top left;
   width: 105px;
   height: 100px;
   float: left;
@@ -184,41 +233,96 @@ div.note p {
 }
 
 .home-advantages .productivity:before {
-  background-position: 0 -574px;
+  background-position: 0 -720px;
 }
 
 .home-advantages .learning:before {
-  background-position: 0 14px;
+  background-position: 0 -588px;
 }
 
 .home-advantages .testability:before {
-  background-position: 0 -680px;
+  background-position: 0 -972px;
 }
 
 .home-advantages .economy:before {
-  background-position: 0 -90px;
+  background-position: 0 -297px;
 }
 
-.home-advantages .flexibility:before {
-  background-position: 0 -205px;
+.home-advantages .injection:before {
+  background-position: 0 -436px;
 }
 
 .home-advantages .soa:before {
-  background-position: 0 -808px;
+  background-position: 0 -853px;
 }
 
 .home-advantages .best-practices:before {
-  background-position: 0 -448px;
+  background-position: 0 0;
 }
 
-.home-advantages .pt-docs:before {
-  background-position: 0 -322px;
+.home-advantages .docs:before {
+  background-position: 0 -153px;
 }
 
-@media (min-width: 480px) {
-  .community {
+#eventPileline {
+  min-width: 700px;
+  width: 90%;
+}
+
+.content-table {
+    width: 100%;
+    background-color: #F8F8F8;
+}
+
+.content-table tr {
+    border-bottom: 1px solid #CECECE;
+}
+
+.content-table tr td {
+    padding: 15px 10px 15px 0;
+    vertical-align: bottom;
+}
+
+.doc-container {
+    max-width: 55em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 400px) {
+  .site-search-link {
+    display: none;
+  }
+
+  .site-search-form {
     display: inline-block;
-    margin-right: 2em;
+    position: relative;
+    font-size: 22px;
+  }
+
+  .site-search-form input {
+    padding: .25em 1.5em .25em .75em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+    font: inherit;
+  }
+
+  .site-search-form button {
+    position: absolute;
+    right: .25em;
+    top: 1px; /* input border */
+    padding: 0;
+    width: 1.5em;
+    height: 1.5em;
+    text-indent: -9999px;
+    border: none;
+    background-image: url("../img/search.png");
+    -webkit-background-size: 50% 50%;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    font: inherit;
   }
 }
 
@@ -230,23 +334,47 @@ div.note p {
 
 @media (min-width: 760px) {
   header {
+    margin-top: 0;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    padding: 1em;
   }
 
-  .logo {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    text-align: left;
+  .header-links {
+    overflow: hidden;
+  }
+
+  .community,
+  .site-languages,
+  .site-search-form {
+    float: right;
+  }
+
+  .community,
+  .site-languages {
+    margin-right: 0;
+    margin-bottom: 1em;
+  }
+
+  .site-search-form {
+    clear: right;
+  }
+
+  .community {
+    margin-left: 2em;
+  }
+
+  .community :last-child {
+    margin-right: 0;
   }
 
   .home-advantages li {
@@ -286,13 +414,13 @@ div.note p {
     text-align: left;
   }
 
-  .download-btn {
-    width: 8em;
+  .home-call-links {
+    width: 16em;
   }
 
   .home-call p,
-  .download-btn {
+  .home-call-links {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: bottom;
   }
 }
